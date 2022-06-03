@@ -27,7 +27,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     provideStorage(() => getStorage()),
     BrowserAnimationsModule,
     CoreModule,
-    AuthModule, // As rotas em auth agora fazem parte do app
+    AuthModule, 
     DiariosModule,
     HotToastModule.forRoot({
       position: 'bottom-center',
@@ -35,6 +35,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
     DashboardModule
   ],
   providers: [],
-  bootstrap: [AppComponent], // primeiro componente a ser exibido
+  bootstrap: [AppComponent], 
 })
 export class AppModule {}
