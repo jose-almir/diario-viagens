@@ -26,9 +26,4 @@ import { MaterialModule } from '../shared/material.module';
 })
 export class AuthModule {}
 
-/**
- * Agrupar as funcionalidades de autenticação:
- * - Página de login
- * - Página de cadastro
- * - Página de redefinir senha
- */
+
