@@ -72,6 +72,10 @@
     >
       As senhas não correspondem
     </span>
+    <form>
+      <ngx-recaptcha2 #captchaElem [siteKey]="siteKey">
+      </ngx-recaptcha2>
+  </form>
     <button mat-raised-button color="primary" [disabled]="signupForm.invalid">
       Cadastrar
     </button>
@@ -84,5 +88,6 @@
     >
       Entrar com o google
     </button>
+
   </form>
 </div>

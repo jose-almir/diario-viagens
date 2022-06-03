@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import{NgxCaptchaModule} from 'ngx-captcha'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -27,14 +27,15 @@ import { DashboardModule } from './dashboard/dashboard.module';
     provideStorage(() => getStorage()),
     BrowserAnimationsModule,
     CoreModule,
-    AuthModule, 
+    AuthModule,
     DiariosModule,
     HotToastModule.forRoot({
       position: 'bottom-center',
     }),
-    DashboardModule
+    DashboardModule,
+    NgxCaptchaModule
   ],
   providers: [],
-  bootstrap: [AppComponent], 
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
