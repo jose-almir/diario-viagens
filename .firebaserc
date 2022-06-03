@@ -6,9 +6,16 @@
           "diario-viagens-6c73b"
         ]
       }
+    },
+    "diario-viagens-7d80b": {
+      "hosting": {
+        "diarios-app": [
+          "diario-viagens-7d80b"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "diario-viagens-6c73b"
+    "default": "diario-viagens-7d80b"
   }
 }
