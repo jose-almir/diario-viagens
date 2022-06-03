@@ -19,6 +19,7 @@ export class CadastroComponent implements OnInit {
     {
       nome: ['', [Validators.required]],
       nick: ['', [Validators.required]],
+      recaptcha: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(8)]],
       confirma_senha: [''],
