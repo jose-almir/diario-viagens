@@ -4,8 +4,7 @@ import { DiarioDetailComponent } from './components/diario-detail/diario-detail.
 import { DiarioListComponent } from './components/diario-list/diario-list.component';
 import { redirectUnauthorizedTo, canActivate } from '@angular/fire/auth-guard';
 
-// Configura uma guarda para redirecionar o usuário para /login
-// caso ele não esteja logado
+
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['/login']);
 
 const routes: Routes = [
@@ -17,14 +16,13 @@ const routes: Routes = [
   {
     path: 'diarios',
     component: DiarioListComponent,
-    ...canActivate(redirectUnauthorizedToLogin), // só pode acessar a rota quem estiver logado
+    ...canActivate(redirectUnauthorizedToLogin),
   },
-  // Essa rota é dinâmica
-  // /diarios/dasdas2133
+
   {
     path: 'diarios/:id',
     component: DiarioDetailComponent,
-    ...canActivate(redirectUnauthorizedToLogin), // só pode acessar a rota quem estiver logado
+    ...canActivate(redirectUnauthorizedToLogin),
   },
 ];
 

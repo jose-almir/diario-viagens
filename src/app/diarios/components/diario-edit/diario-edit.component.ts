@@ -18,7 +18,6 @@ export class DiarioEditComponent implements OnInit {
   imagem?: File;
 
   setImage(ev: any) {
-    // target é o input file
     this.imagem = ev.target.files[0];
   }
 
