@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
   styleUrls: ['./cadastro.component.scss'],
 })
 export class CadastroComponent implements OnInit {
+  siteKey: string;
   signupForm = this.fb.group(
     {
       nome: ['', [Validators.required]],
@@ -35,7 +36,9 @@ export class CadastroComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private toast: HotToastService
-  ) {}
+  ) {
+    this.siteKey = '6LfoD0AgAAAAADF-oTfJHI2o7gzEu7i3l1gaeQKy'
+  }
 
   onSubmit() {
     const { email, senha, nick, nome } = this.signupForm.value;

@@ -9,6 +9,9 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  siteKey: string;
+
+
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     senha: ['', [Validators.required, Validators.minLength(8)]],
@@ -18,7 +21,11 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private toast: HotToastService
-  ) {}
+  ) {
+    this.siteKey = '6LfoD0AgAAAAADF-oTfJHI2o7gzEu7i3l1gaeQKy';
+   }
+
+
 
   onSubmit() {
     const { email, senha } = this.loginForm.value;
@@ -47,5 +54,5 @@ export class LoginComponent implements OnInit {
       .subscribe();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
