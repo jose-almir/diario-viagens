@@ -1,14 +1,14 @@
 {
   "targets": {
-    "diario-viagens-6c73b": {
+    "diario-viagens-272c6": {
       "hosting": {
         "diarios-app": [
-          "diario-viagens-6c73b"
+          "diario-viagens-272c6"
         ]
       }
     }
   },
   "projects": {
-    "default": "diario-viagens-6c73b"
+    "default": "diario-viagens-272c6"
   }
 }

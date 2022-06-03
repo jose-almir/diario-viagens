@@ -1,12 +1,12 @@
 export const environment = {
   firebase: {
-    projectId: 'diario-viagens-6c73b',
-    appId: '1:167645777431:web:a78fb2a6737b6bc1345652',
-    storageBucket: 'diario-viagens-6c73b.appspot.com',
+    projectId: 'diario-viagens-272c6',
+    appId: '1:264893836085:web:8d190bd36da508fdc07a7c',
+    storageBucket: 'diario-viagens-272c6.appspot.com',
     locationId: 'us-central',
-    apiKey: 'AIzaSyBGTgkqJHUv1O_bWq7EfAJ1eUUnegEDFnw',
-    authDomain: 'diario-viagens-6c73b.firebaseapp.com',
-    messagingSenderId: '167645777431',
+    apiKey: 'AIzaSyBdr4g226RTiZ04CvJ3odKFw7flrlWwNjw',
+    authDomain: 'diario-viagens-272c6.firebaseapp.com',
+    messagingSenderId: '264893836085',
   },
   production: true
 };
