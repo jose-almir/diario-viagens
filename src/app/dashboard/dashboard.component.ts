@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
-        // retorna cards para mobile
+        
         return [
           { title: 'Postagens da semana', cols: 3, rows: 1, id: 'week-posts' },
           {
