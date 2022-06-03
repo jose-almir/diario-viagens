@@ -112,8 +112,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "diarios-app:build:production",
-            "firebaseProject": "diario-viagens-6c73b",
-            "firebaseHostingSite": "diario-viagens-6c73b"
+            "firebaseProject": "diario-viagens-af5e2",
+            "firebaseHostingSite": "diario-viagens-af5e2"
           }
         }
       }
