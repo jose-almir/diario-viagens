@@ -1,5 +1,7 @@
-<mat-toolbar color="primary">
-  <span>Diários</span>
+<mat-toolbar class="bg">
+  <span>
+    <a mat-button routerLink="/home"><img src="assets/img/logodiario.png" alt="logo"></a>
+  </span>
   <span class="spacer"></span>
   <div *ngIf="logged$ | async; else unlogged" class="link-area">
     <a mat-button routerLink="/diarios">Diários</a>
