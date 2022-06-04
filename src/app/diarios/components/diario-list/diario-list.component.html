@@ -25,29 +25,31 @@
 			</mat-grid-list>
 		</mat-tab>
 		<mat-tab label="Meus diários">
-			<div *ngIf="meusDiarios$ | async as diarios; else loading">
-				<mat-card *ngFor="let diario of diarios" class="example-card">
-					<mat-card-header>
-						<div mat-card-avatar class="example-header-image"></div>
-						<mat-card-title>{{ diario.usuarioName }}</mat-card-title>
-						<mat-card-subtitle>{{ diario.usuarioNick }}</mat-card-subtitle>
-					</mat-card-header>
-					<img mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu" />
-					<mat-card-content>
-						<h2>{{ diario.titulo }}</h2>
-						<small>{{ diario.data | date }} | {{ diario.local }}</small>
-						<p>{{ diario.corpo }}</p>
-					</mat-card-content>
-					<mat-card-actions>
-						<button (click)="onClickEdit(diario)" mat-icon-button color="primary">
-							<mat-icon>edit</mat-icon>
-						</button>
-						<button (click)="onClickDelete(diario)" mat-icon-button color="warn">
-							<mat-icon>delete</mat-icon>
-						</button>
-					</mat-card-actions>
-				</mat-card>
-			</div>
+			<mat-grid-list [cols]="colsNumber" (window:resize)="onResize($event)" *ngIf="meusDiarios$ | async as diarios; else loading" class="my-5" rowHeight="450">
+				<mat-grid-tile>
+					<mat-card *ngFor="let diario of diarios" class="example-card">
+						<mat-card-header>
+							<div mat-card-avatar class="example-header-image"></div>
+							<mat-card-title>{{ diario.usuarioName }}</mat-card-title>
+							<mat-card-subtitle>{{ diario.usuarioNick }}</mat-card-subtitle>
+						</mat-card-header>
+						<img mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu" />
+						<mat-card-content>
+							<h2>{{ diario.titulo }}</h2>
+							<small>{{ diario.data | date }} | {{ diario.local }}</small>
+							<p>{{ diario.corpo }}</p>
+						</mat-card-content>
+						<mat-card-actions>
+							<button (click)="onClickEdit(diario)" mat-icon-button color="primary">
+								<mat-icon>edit</mat-icon>
+							</button>
+							<button (click)="onClickDelete(diario)" mat-icon-button color="warn">
+								<mat-icon>delete</mat-icon>
+							</button>
+						</mat-card-actions>
+					</mat-card>
+				</mat-grid-tile>
+			</mat-grid-list>
 		</mat-tab>
 	</mat-tab-group>
 </div>
