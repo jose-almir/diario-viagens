@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
+import { TermosDePrivacidadeComponent } from './components/termos-de-privacidade/termos-de-privacidade.component';
 import { UsuarioNaoVerificadoComponent } from './components/usuario-nao-verificado/usuario-nao-verificado.component';
 
 const redirectLoggedInToDiarios = () => redirectLoggedInTo(['/diarios']);
@@ -29,6 +30,13 @@ const routes: Routes = [
     component: UsuarioNaoVerificadoComponent,
     ...canActivate(redirectLoggedInToDiarios),
   },
+
+  {
+    path: 'termos-de-privacidade',
+    component: TermosDePrivacidadeComponent,
+    ...canActivate(redirectLoggedInToDiarios),
+
+  },
 ];
 
 @NgModule({
@@ -36,4 +44,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AuthRoutingModule {}
+export class AuthRoutingModule { }
