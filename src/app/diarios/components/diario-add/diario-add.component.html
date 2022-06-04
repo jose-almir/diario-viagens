@@ -13,41 +13,26 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Data</mat-label>
-      <input
-        matInput
-        [matDatepicker]="picker"
-        name="data"
-        [(ngModel)]="diario.data"
-      />
+      <input matInput [matDatepicker]="picker" name="data" [(ngModel)]="diario.data" />
       <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Comentário</mat-label>
-      <textarea
-        name="corpo"
-        matInput
-        [(ngModel)]="diario.corpo"
-        required
-      ></textarea>
+      <textarea name="corpo" matInput [(ngModel)]="diario.corpo" required></textarea>
       <mat-icon matPrefix>chat</mat-icon>
     </mat-form-field>
-    <input
-      (change)="setImage($event)"
-      #imagem
-      type="file"
-      name="imagem"
-      hidden
-    />
-    <button
-      (click)="imagem.click()"
-      type="button"
-      mat-raised-button
-      color="accent"
-    >
-      <mat-icon>upload</mat-icon>
-      Imagem do diário</button
-    ><br />
+    <input (change)="setImage($event)" #imagem type="file" name="imagem" hidden />
+    <button (click)="imagem.click()" type="button" mat-raised-button color="accent">
+      <div class="upload-image" *ngIf="mudar; else nameNotFound">
+        <mat-icon>done</mat-icon>
+        <span>Imagem inserida</span>
+      </div>
+      <ng-template #nameNotFound>
+        <mat-icon>upload</mat-icon>
+        Imagem do diário
+    </ng-template>
+    </button><br />
     <button mat-raised-button color="primary" [disabled]="form.invalid">
       Adicionar
     </button>

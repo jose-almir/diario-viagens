@@ -10,9 +10,10 @@ import { Diario } from 'src/app/core/models/diario';
 export class DiarioAddComponent implements OnInit {
   diario: Diario = {} as Diario;
   imagem?: File;
-
+  mudar: boolean = false;
+  
   setImage(ev: any) {
-   
+    this.mudar = true;
     this.imagem = ev.target.files[0];
   }
 
