@@ -24,11 +24,11 @@
     </mat-form-field>
     <input (change)="setImage($event)" #imagem type="file" name="imagem" hidden />
     <button (click)="imagem.click()" type="button" mat-raised-button color="accent">
-      <div class="upload-image" *ngIf="mudar; else nameNotFound">
+      <div class="upload-image" *ngIf="mudar; else  uploadNotFound">
         <mat-icon>done</mat-icon>
         <span>Imagem inserida</span>
       </div>
-      <ng-template #nameNotFound>
+      <ng-template #uploadNotFound>
         <mat-icon>upload</mat-icon>
         Imagem do diário
     </ng-template>
