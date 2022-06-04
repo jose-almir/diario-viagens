@@ -16,10 +16,8 @@
             <mat-error *ngIf="loginForm.get('senha')?.errors?.['minlength']">O mínimo são 8 caracteres</mat-error>
             <mat-icon matPrefix>key</mat-icon>
         </mat-form-field>
-        <form>
-            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey">
+            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha" >
             </ngx-recaptcha2>
-        </form>
         <a routerLink="/recuperar-senha">Esqueci minha senha</a>
         <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
         <span>ou</span>

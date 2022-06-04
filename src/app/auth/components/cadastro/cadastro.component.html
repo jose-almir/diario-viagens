@@ -72,10 +72,8 @@
     >
       As senhas não correspondem
     </span>
-    <form>
-      <ngx-recaptcha2 #captchaElem [siteKey]="siteKey">
-      </ngx-recaptcha2>
-  </form>
+    <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+    </ngx-recaptcha2>
     <button mat-raised-button color="primary" [disabled]="signupForm.invalid">
       Cadastrar
     </button>
