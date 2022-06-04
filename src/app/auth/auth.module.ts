@@ -8,6 +8,7 @@ import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-
 import { UsuarioNaoVerificadoComponent } from './components/usuario-nao-verificado/usuario-nao-verificado.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material.module';
+import { TermosDePrivacidadeComponent } from './components/termos-de-privacidade/termos-de-privacidade.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MaterialModule } from '../shared/material.module';
     CadastroComponent,
     RecuperarSenhaComponent,
     UsuarioNaoVerificadoComponent,
+    TermosDePrivacidadeComponent,
   ],
   imports: [
     CommonModule,
