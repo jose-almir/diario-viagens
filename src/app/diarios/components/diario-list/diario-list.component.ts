@@ -15,12 +15,14 @@ import { DiarioEditComponent } from '../diario-edit/diario-edit.component';
 export class DiarioListComponent implements OnInit {
   allDiarios$?: Observable<Diario[]>;
   meusDiarios$?: Observable<Diario[]>;
+  colsNumber!: number;
+  private breakpoint: number = 800;
 
   constructor(
     private dialog: MatDialog,
     private diariosService: DiariosService,
     private toast: HotToastService
-  ) {} // Abrir dialogs baseado em componentes existentes
+  ) { } // Abrir dialogs baseado em componentes existentes
 
   onClickAdd() {
     // DiarioAddComponent será mostrado dentro do dialog
@@ -80,7 +82,13 @@ export class DiarioListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.colsNumber = window.innerWidth <= this.breakpoint ? 2 : 3;
     this.allDiarios$ = this.diariosService.getTodosDiarios();
     this.meusDiarios$ = this.diariosService.getDiariosUsuario();
   }
+
+  onResize(event: any) {
+    this.colsNumber = event.target.innerWidth <= this.breakpoint ? 2 : 3;
+  }
 }
+
