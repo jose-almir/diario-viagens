@@ -12,6 +12,16 @@ export class NavbarComponent implements OnInit {
 
   logged$?: Observable<any>;
 
+  corDaNav: string = "primary" 
+
+  mudarCor() {
+    if(this.corDaNav === "primary") {
+      this.corDaNav = "accent"
+    } else {
+      this.corDaNav = "primary"
+    }
+  }
+
   logout() {
     this.authService.logout('/login').subscribe();
   }
