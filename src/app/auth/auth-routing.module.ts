@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { canActivate, redirectLoggedInTo } from '@angular/fire/auth-guard';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { TermosDePrivacidadeComponent } from './components/termos-de-privacidade/termos-de-privacidade.component';
@@ -34,6 +35,13 @@ const routes: Routes = [
   {
     path: 'termos-de-privacidade',
     component: TermosDePrivacidadeComponent,
+    ...canActivate(redirectLoggedInToDiarios),
+
+  },
+
+  {
+    path: '',
+    component: HomeComponent,
     ...canActivate(redirectLoggedInToDiarios),
 
   },
