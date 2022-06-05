@@ -9,6 +9,7 @@ import { UsuarioNaoVerificadoComponent } from './components/usuario-nao-verifica
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material.module';
 import { TermosDePrivacidadeComponent } from './components/termos-de-privacidade/termos-de-privacidade.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TermosDePrivacidadeComponent } from './components/termos-de-privacidade
     RecuperarSenhaComponent,
     UsuarioNaoVerificadoComponent,
     TermosDePrivacidadeComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,

@@ -3,8 +3,8 @@
   <span class="spacer"></span>
   <div *ngIf="logged$ | async; else unlogged" class="link-area">
     <a mat-button routerLink="/diarios">Diários</a>
-    <button mat-icon-button (click)="mudarCor()" >
-      <mat-icon >colorize</mat-icon>
+    <button mat-icon-button (click)="mudarCor()">
+      <mat-icon>colorize</mat-icon>
     </button>
     <button mat-icon-button (click)="logout()">
       <mat-icon>logout</mat-icon>
@@ -12,6 +12,7 @@
   </div>
   <ng-template #unlogged>
     <div class="link-area">
+      <a mat-button routerLink="">Home</a>
       <a mat-button routerLink="/login">Login</a>
       <a mat-button routerLink="/cadastro">Cadastro</a>
     </div>
