@@ -37,6 +37,16 @@ form {
   width: 16%;  
 }
 
+.diario-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diario-delete-text {
+  min-width: 284px;
+  font-size: 18px;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
