@@ -40,9 +40,9 @@ const routes: Routes = [
   },
 
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
-    ...canActivate(redirectLoggedInToDiarios),
+    // ...canActivate(redirectLoggedInToDiarios),
 
   },
 ];
