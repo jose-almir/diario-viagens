@@ -8,8 +8,9 @@
     <span>Diários</span>
   </ng-template>
   <span class="spacer"></span>
-  <div *ngIf="logged$ | async; else unlogged" class="link-area">
+  <div *ngIf="logged$ | async as logadoNavbar; else unlogged" class="link-area">
     <a mat-button routerLink="/diarios"  matTooltip="Todos">Diários</a>
+    <a mat-button>{{logadoNavbar.email}}</a>
     <button mat-icon-button (click)="mudarCor()" matTooltip="Mudar cor">
       <mat-icon>colorize</mat-icon>
     </button>
