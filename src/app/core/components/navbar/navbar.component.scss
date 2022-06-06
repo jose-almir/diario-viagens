@@ -1,8 +1,13 @@
 .spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 .link {
-  text-decoration: none;
-  font-size: 22px;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+mat-toolbar {
+    background-color: #623EBA;
+    color: rgb(255, 255, 255);
 }

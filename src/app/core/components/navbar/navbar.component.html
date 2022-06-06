@@ -1,28 +1,29 @@
-<mat-toolbar color={{corDaNav}}>
-  <div *ngIf="logged$ | async; else unlink">
-    <a mat-button (click)="onHome()" class="link">
-      <span matTooltip="Ir para a home">Diários</span>
-    </a>
-  </div>
-  <ng-template #unlink>
-    <span>Diários</span>
-  </ng-template>
-  <span class="spacer"></span>
-  <div *ngIf="logged$ | async as logadoNavbar; else unlogged" class="link-area">
-    <a mat-button routerLink="/diarios"  matTooltip="Todos">Diários</a>
-    <a mat-button>{{logadoNavbar.email}}</a>
-    <button mat-icon-button (click)="mudarCor()" matTooltip="Mudar cor">
+<mat-toolbar class="nvbar-color" style="height: 100px;">
+    <div *ngIf="logged$ | async; else unlink">
+        <a mat-button (click)="onHome()" class="link">
+            <span matTooltip="Ir para a home">Diários</span>
+        </a>
+    </div>
+    <ng-template #unlink>
+        <a routerLink="/home">
+            <img src="./assets/img/lgo-removebg-preview.png" style="width: 160px; margin-top: 15px;">
+        </a>
+    </ng-template>
+    <span class="spacer"></span>
+    <div *ngIf="logged$ | async as logadoNavbar; else unlogged" class="link-area">
+        <a mat-button routerLink="/diarios" matTooltip="Todos">Diários</a>
+        <a mat-button>{{logadoNavbar.email}}</a>
+        <button mat-icon-button (click)="mudarCor()" matTooltip="Mudar cor">
       <mat-icon>colorize</mat-icon>
     </button>
-    <button mat-icon-button (click)="logout()" matTooltip="Fazer logout">
+        <button mat-icon-button (click)="logout()" matTooltip="Fazer logout">
       <mat-icon>logout</mat-icon>
     </button>
-  </div>
-  <ng-template #unlogged>
-    <div class="link-area">
-      <a mat-button routerLink="/home">Home</a>
-      <a mat-button routerLink="/login">Login</a>
-      <a mat-button routerLink="/cadastro">Cadastro</a>
     </div>
-  </ng-template>
+    <ng-template #unlogged>
+        <div class="link-area">
+            <a mat-button routerLink="/login">Login</a>
+            <a mat-button routerLink="/cadastro">Cadastro</a>
+        </div>
+    </ng-template>
 </mat-toolbar>

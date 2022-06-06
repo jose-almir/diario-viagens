@@ -1,4 +1,4 @@
-<div class="form-wrapper">
+<div class="form-wrapper container">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <h2>Login</h2>
         <p>Seja bem-vindo(a) de volta!</p>
@@ -23,8 +23,8 @@
             <mat-icon matPrefix>key</mat-icon>
         </mat-form-field>
         <a routerLink="/recuperar-senha">Esqueci minha senha</a>
-        <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
-        <span>ou</span>
+        <button class="btnLoginBG" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+        <span class="elementLine">ou</span>
         <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
             Entrar com o google
         </button>
