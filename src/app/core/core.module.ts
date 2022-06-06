@@ -13,12 +13,15 @@ import { TermosDeUsoComponent } from './components/termos-de-uso/termos-de-uso.c
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule, 
+    RouterModule, // para utilizar o routerLink na navbar
   ],
-  exports: [ 
+  exports: [ // são os componentes, pipes e etc que ficam "públicos"
     NavbarComponent
   ],
 })
 export class CoreModule {}
 
-
+/**
+ * Guardas elementos de contexto global como serviços,
+ * navbar, models e etc.
+ */
