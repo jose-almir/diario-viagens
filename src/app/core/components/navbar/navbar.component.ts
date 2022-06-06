@@ -18,13 +18,14 @@ export class NavbarComponent implements OnInit {
 
   logged$?: Observable<any>;
 
-  corDaNav: string = "primary"
+  corDaNav: string = "#d7d228"
 
   mudarCor() {
-    if(this.corDaNav === "primary") {
+    document.querySelector(".navbar-color")?.classList.add("btnCheck2");
+    if(this.corDaNav === "#d7d228") {
       this.corDaNav = "accent"
     } else {
-      this.corDaNav = "primary"
+      this.corDaNav = "#d7d228"
     }
   }
 
