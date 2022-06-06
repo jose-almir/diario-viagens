@@ -11,14 +11,14 @@ export class DiarioEditComponent implements OnInit {
   diario: Diario = {} as Diario;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) private data: Diario, 
+    @Inject(MAT_DIALOG_DATA) private data: Diario, // objeto enviado no open {data: diario}
     private ref: MatDialogRef<DiarioEditComponent>
   ) {}
 
   imagem?: File;
 
   setImage(ev: any) {
-    
+    // target é o input file
     this.imagem = ev.target.files[0];
   }
 

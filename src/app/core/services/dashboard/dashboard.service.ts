@@ -60,15 +60,15 @@ export class DashboardService {
   }
 
   private _weekPosts(diarios: Diario[]) {
- 
+    // lodash
     const weekdays = [
-      'Domingo', 
-      'Segunda', 
-      'Terça', 
-      'Quarta', 
-      'Quinta', 
-      'Sexta', 
-      'Sábado', 
+      'Domingo', // 0
+      'Segunda', // 1
+      'Terça', // 2
+      'Quarta', // 3
+      'Quinta', // 4
+      'Sexta', // 5
+      'Sábado', // 6
     ];
 
     const dates = diarios.map((diario) => weekdays[diario.createdAt.getDay()]);
