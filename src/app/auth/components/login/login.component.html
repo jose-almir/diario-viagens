@@ -11,7 +11,13 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Senha</mat-label>
-            <input matInput placeholder="Sua senha" formControlName="senha" type="password" required>
+            <mat-icon mat-icon class="viewPassword" (click)="changeView()">visibility</mat-icon>
+            <input *ngIf="!hide ; else: type" matInput placeholder="Sua senha" formControlName="senha" type="password"
+                secureTextEntry="false" />
+            <ng-template #type>
+                <input matInput placeholder="Sua senha" formControlName="senha" type="text" secureTextEntry="false" />
+            </ng-template>
+            <input matInput formControlName="senha" type="password" required>
             <mat-error *ngIf="loginForm.get('senha')?.errors?.['required']">Campo obrigatório</mat-error>
             <mat-error *ngIf="loginForm.get('senha')?.errors?.['minlength']">O mínimo são 8 caracteres</mat-error>
             <mat-icon matPrefix>key</mat-icon>
