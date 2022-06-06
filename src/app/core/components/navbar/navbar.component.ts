@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Observable } from 'rxjs';
 import { AuthService } from '../../services/auth/auth.service';
@@ -11,12 +12,13 @@ import { AuthService } from '../../services/auth/auth.service';
 export class NavbarComponent implements OnInit {
   constructor(
     private authService: AuthService,
-    private toast: HotToastService
+    private toast: HotToastService,
+    private router: Router
     ) {}
 
   logged$?: Observable<any>;
 
-  corDaNav: string = "primary" 
+  corDaNav: string = "primary"
 
   mudarCor() {
     if(this.corDaNav === "primary") {
@@ -25,6 +27,11 @@ export class NavbarComponent implements OnInit {
       this.corDaNav = "primary"
     }
   }
+
+
+  onHome(){
+    this.router.navigate(['/home']);
+}
 
   logout() {
     this.authService.logout('/login')
