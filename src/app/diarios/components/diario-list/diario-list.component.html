@@ -26,8 +26,8 @@
 		</mat-tab>
 		<mat-tab label="Meus diários">
 			<mat-grid-list [cols]="colsNumber" (window:resize)="onResize($event)" *ngIf="meusDiarios$ | async as diarios; else loading" class="my-5" rowHeight="450">
-				<mat-grid-tile>
-					<mat-card *ngFor="let diario of diarios" class="example-card">
+				<mat-grid-tile *ngFor="let diario of diarios">
+					<mat-card class="example-card w-75 m-2">
 						<mat-card-header>
 							<div mat-card-avatar class="example-header-image"></div>
 							<mat-card-title>{{ diario.usuarioName }}</mat-card-title>
