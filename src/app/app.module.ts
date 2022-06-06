@@ -28,7 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     provideStorage(() => getStorage()),
     BrowserAnimationsModule,
     CoreModule,
-    AuthModule, // As rotas em auth agora fazem parte do app
+    AuthModule, 
     DiariosModule,
     HotToastModule.forRoot({
       position: 'bottom-center',
@@ -37,6 +37,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent], // primeiro componente a ser exibido
+  bootstrap: [AppComponent], 
 })
 export class AppModule {}
