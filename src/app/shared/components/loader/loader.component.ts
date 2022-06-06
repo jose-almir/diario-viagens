@@ -6,9 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./loader.component.scss'],
 })
 export class LoaderComponent implements OnInit {
-  // Input property
-  // ao usar <app-loader> é possível utilizar
-  // <app-loader label="Carregando diários..."></app-loader>
+ 
   @Input() label: string = '';
 
   constructor() {}
