@@ -1,0 +1,12 @@
+<div>
+    <form [formGroup]="aFormGroup">
+        <ngx-recaptcha2 #captchaElem 
+        [siteKey]="siteKey" 
+        [size]="size" 
+        [hl]="lang"
+        [theme]="theme" 
+        [type]="type" 
+        formControlName="recaptcha">
+        </ngx-recaptcha2>
+    </form>
+</div>

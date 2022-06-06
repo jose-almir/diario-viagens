@@ -2,14 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MaterialModule } from './material.module';
+import { RecaptchaComponent } from './components/recaptcha/recaptcha.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
     // recursos que fazem parte do módulo (componentes, pipes, diretivas)
-    LoaderComponent,
+    LoaderComponent, RecaptchaComponent
   ],
-  imports: [CommonModule, MaterialModule],
-  exports: [LoaderComponent],
+  imports: [
+    CommonModule, 
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxCaptchaModule
+  ],
+  exports: [
+    LoaderComponent, 
+    RecaptchaComponent
+  ],
 })
 export class SharedModule {}
 
