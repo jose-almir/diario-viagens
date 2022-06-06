@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       .loginEmail(email, senha)
       .pipe(
         this.toast.observe({
-          success: 'Login efetuado',
+          success: 'Boas Vindas',
           error: 'Um erro ocorreu',
           loading: 'Fazendo login...',
         })
