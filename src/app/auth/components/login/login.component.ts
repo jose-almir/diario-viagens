@@ -14,11 +14,21 @@ export class LoginComponent implements OnInit {
     senha: ['', [Validators.required, Validators.minLength(8)]],
   });
 
+  hide?: boolean = false;
+
+  changeView() {
+    if (this.hide === true) {
+      this.hide = false;
+    } else {
+      this.hide = true;
+    }
+  }
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private toast: HotToastService
-  ) {}
+  ) { }
 
   onSubmit() {
     const { email, senha } = this.loginForm.value;
@@ -47,5 +57,6 @@ export class LoginComponent implements OnInit {
       .subscribe();
   }
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void { }
 }
