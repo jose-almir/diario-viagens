@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Diario } from 'src/app/core/models/diario';
 import { DiariosService } from 'src/app/core/services/diarios/diarios.service';
 import { DiarioAddComponent } from '../diario-add/diario-add.component';
+import { DiarioDeleteComponent } from '../diario-delete/diario-delete.component';
 import { DiarioEditComponent } from '../diario-edit/diario-edit.component';
 
 @Component({
@@ -70,13 +71,25 @@ export class DiarioListComponent implements OnInit {
   }
 
   onClickDelete(diario: Diario) {
-    const canDelete = confirm('Deseja mesmo deletar?');
-    if (canDelete) {
-      this.diariosService
-        .deleteDiario(diario)
-        .pipe(this.toast.observe({ success: 'Diário apagado!' }))
-        .subscribe();
-    }
+    const ref = this.dialog.open(DiarioDeleteComponent, {
+      minWidth: '400px',
+      data: { ...diario },
+    });
+    ref.afterClosed().subscribe({
+      next: (result) => {
+        if (result) {
+          this.diariosService.deleteDiario(result.diario)
+            .pipe(
+              this.toast.observe({
+                loading: 'Deletando...',
+                error: 'Ocorreu um erro',
+                success: 'Diário deletado',
+              })
+            )
+            .subscribe();
+        }
+      },
+    });
   }
 
   ngOnInit(): void {
