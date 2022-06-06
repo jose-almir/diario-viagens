@@ -25,5 +25,9 @@
         <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
             Entrar com o google
         </button>
+        <ngx-recaptcha2 #captchaElem
+        [siteKey]="siteKey"
+        formControlName="recaptcha">
+      </ngx-recaptcha2>
     </form>
 </div>

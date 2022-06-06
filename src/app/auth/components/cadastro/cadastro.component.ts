@@ -21,6 +21,7 @@ export class CadastroComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(8)]],
       confirma_senha: [''],
+      recaptcha: ['', Validators.required],
     },
     { validators: [this.matchPasswords] }
   );
@@ -65,4 +66,5 @@ export class CadastroComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  siteKey: string = "6LctMUcgAAAAAERwiw_KjqbJodnSPLrELJUORFjj";
 }
