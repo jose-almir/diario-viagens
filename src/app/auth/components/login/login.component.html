@@ -11,16 +11,19 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Senha</mat-label>
-            <input matInput placeholder="Sua senha" formControlName="senha" type="password" required>
+            <input matInput placeholder="Sua senha" formControlName="senha" [type]="hide ? 'password' : 'text'" required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" >
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
             <mat-error *ngIf="loginForm.get('senha')?.errors?.['required']">Campo obrigatório</mat-error>
             <mat-error *ngIf="loginForm.get('senha')?.errors?.['minlength']">O mínimo são 8 caracteres</mat-error>
-            <mat-icon matPrefix>key</mat-icon>
+            <mat-icon matPrefix>key</mat-icon>          
         </mat-form-field>
             <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha" >
             </ngx-recaptcha2>
         <a routerLink="/recuperar-senha">Esqueci minha senha</a>
         <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
-        <span>ou</span>
+            <span>ou</span>
         <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
             Entrar com o google
         </button>

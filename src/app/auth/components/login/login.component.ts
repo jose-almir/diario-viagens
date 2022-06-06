@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   siteKey: string;
-
+  hide = true;
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],

@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 })
 export class CadastroComponent implements OnInit {
   siteKey: string;
+  hide = true;
   signupForm = this.fb.group(
     {
       nome: ['', [Validators.required]],
