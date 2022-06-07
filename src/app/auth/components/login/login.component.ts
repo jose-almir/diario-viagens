@@ -16,13 +16,14 @@ export class LoginComponent implements OnInit {
 
   hide?: boolean = false;
 
-  changeView() {
-    if (this.hide === true) {
+  changeView(){
+    if(this.hide === true){
       this.hide = false;
-    } else {
+    }else {
       this.hide = true;
     }
   }
+
 
   constructor(
     private fb: FormBuilder,
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
       .subscribe();
   }
 
+  
   onLoginGoogle() {
     this.authService
       .loginGoogle()
