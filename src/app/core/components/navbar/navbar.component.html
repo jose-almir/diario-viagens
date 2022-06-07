@@ -1,7 +1,11 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" id="toolbar"> <!--accent-->
   <span>Diários</span>
   <span class="spacer"></span>
+  
   <div class="my-auto" *ngIf="logged$ | async; else unlogged" class="link-area">
+    <button mat-icon-button (click)="muda()">
+      <mat-icon>invert_colors</mat-icon>
+    </button>
     <button mat-icon-button>
       <mat-icon matPrefix>person</mat-icon>
     </button>
