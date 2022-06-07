@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   logged$?: Observable<any>;
+  logged: any;
 
   logout() {
     this.authService.logout('/login').subscribe();
@@ -18,5 +19,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.logged$ = this.authService.logged;
+    this.authService.logged.subscribe
+    (value =>{
+      this.logged = value;
+    })
   }
+
 }

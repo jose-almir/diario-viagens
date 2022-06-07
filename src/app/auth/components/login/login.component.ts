@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     senha: ['', [Validators.required, Validators.minLength(8)]],
   });
 
+  ocultar = true;
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,

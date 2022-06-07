@@ -9,6 +9,7 @@ import { DiarioAddComponent } from './components/diario-add/diario-add.component
 import { DiarioDetailComponent } from './components/diario-detail/diario-detail.component';
 import { DiarioEditComponent } from './components/diario-edit/diario-edit.component';
 import { DiarioListComponent } from './components/diario-list/diario-list.component';
+import { DiarioDeleteComponent } from './components/diario-delete/diario-delete.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DiarioListComponent } from './components/diario-list/diario-list.compon
     DiarioAddComponent,
     DiarioDetailComponent,
     DiarioEditComponent,
-    DiarioListComponent
+    DiarioListComponent,
+    DiarioDeleteComponent
   ],
   imports: [
     CommonModule,
