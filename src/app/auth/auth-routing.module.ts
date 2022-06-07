@@ -32,7 +32,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  // As rotas do array serão unidas com as do app-routing
+  
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
