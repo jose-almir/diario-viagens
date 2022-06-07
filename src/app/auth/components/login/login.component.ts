@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       .subscribe();
   }
 
+  
   onLoginGoogle() {
     this.authService
       .loginGoogle()
