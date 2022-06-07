@@ -25,6 +25,9 @@
         <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
             Entrar com o google
         </button>
+        <button (click)="onLoginFacebook()" type="button" mat-raised-button color="primary" style="margin: 5px 0px;">
+            Entrar com o febebook
+        </button>
         <ngx-recaptcha2 #captchaElem
         [siteKey]="siteKey"
         formControlName="recaptcha">
