@@ -21,15 +21,15 @@ export class DiarioListComponent implements OnInit {
     private dialog: MatDialog,
     private diariosService: DiariosService,
     private toast: HotToastService
-  ) {} // Abrir dialogs baseado em componentes existentes
+  ) {} 
 
   onClickAdd() {
-    // DiarioAddComponent será mostrado dentro do dialog
+    
     const ref = this.dialog.open(DiarioAddComponent, { maxWidth: '512px' });
-    // Acontece logo após o fechamento do dialog
+    
     ref.afterClosed().subscribe({
       next: (result) => {
-        // Evento que ocorre ao fechar dialog
+        
         if (result) {
           this.diariosService
             .addDiario(result.diario, result.imagem)
@@ -47,7 +47,7 @@ export class DiarioListComponent implements OnInit {
   }
 
   onClickEdit(diario: Diario) {
-    // Criar referência p/ dialog
+    
     const ref = this.dialog.open(DiarioEditComponent, {
       maxWidth: '512px',
       data: { ...diario },

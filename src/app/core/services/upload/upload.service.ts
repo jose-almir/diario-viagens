@@ -10,25 +10,23 @@ export class UploadService {
   constructor(private storage: Storage) {}
 
   private createFileName(file: File): string {
-    // batata.jpg
-    const ext = file.name.split('.').pop(); // jpg
+    
+    const ext = file.name.split('.').pop(); 
     const name = `${Date.now()}${Math.floor(Math.random() * 1000)}`;
 
-    return `${name}.${ext}`; // 2131231231312312312.jpg
+    return `${name}.${ext}`; 
   }
 
-  // folder indica a pasta para salvar o file.
-  // folder pode ser /diarios/fx125/
-  // Retorna o link da imagem ou null
+  
   upload(file?: File, folder?: string): Observable<string | null> {
     if (file) {
       const filename = this.createFileName(file);
-      const fileRef = ref(this.storage, folder + filename); // Ex:  /diarios/fx125/12345.jpg
+      const fileRef = ref(this.storage, folder + filename); 
       return from(uploadBytes(fileRef, file)).pipe(
-        switchMap(() => from(getDownloadURL(fileRef))) // o upload é realizado e depois o link é solicitado
+        switchMap(() => from(getDownloadURL(fileRef))) 
       );
     } else {
-      return of(null); // não ocorre upload
+      return of(null); 
     }
   }
 }

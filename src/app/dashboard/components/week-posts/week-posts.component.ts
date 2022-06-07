@@ -21,11 +21,11 @@ export class WeekPostsComponent implements OnInit {
     this.chartData$ = this.dashboardService.getWeekPosts().pipe(
       map((data) => {
         return {
-          labels: Object.keys(data), // eixo horizontal
+          labels: Object.keys(data), 
           datasets: [
             {
-              data: Object.values(data),// eixo vertical
-              label: 'Quantidade de posts', // série
+              data: Object.values(data),
+              label: 'Quantidade de posts', 
             },
           ],
         };
