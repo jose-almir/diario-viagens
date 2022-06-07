@@ -36,7 +36,7 @@
                 <mat-grid-list cols="3" rowHeight="500px" *ngIf="qtColumns | async as dimension">
                     <mat-grid-tile *ngFor="let diario of diarios" [colspan]="dimension.cols">
                         <mat-card class="diario-card">
-                            <img mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu">
+                            <img class="imgfoto" mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu">
                             <mat-card-title>{{diario.titulo}}</mat-card-title>
                         </mat-card>
                     </mat-grid-tile>
@@ -53,6 +53,6 @@
 
 <div class="fab-wrapper">
     <button (click)="onClickAdd()" mat-fab color="primary">
-  <mat-icon>add</mat-icon>
-</button>
+        <mat-icon>add</mat-icon>
+    </button>
 </div>
