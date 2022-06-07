@@ -1,11 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .fab-wrapper {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 999;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 999;
 }
 
 .example-header-image {
-  background-image: url('https://jsl-online.com/wp-content/uploads/2017/01/placeholder-user.png');
-  background-size: cover;
+    background-image: url('https://jsl-online.com/wp-content/uploads/2017/01/placeholder-user.png');
+    background-size: cover;
+}
+
+.diario-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+}
+
+.div-perfil {
+    display: flex;
+    align-items: center;
+}
+
+.div-perfil mat-card-title {
+    margin: auto;
+    margin-left: 10px;
 }
