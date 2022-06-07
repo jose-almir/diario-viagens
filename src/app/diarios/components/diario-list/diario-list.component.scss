@@ -22,6 +22,11 @@
     left: 15px;
     right: 15px;
     bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: blue;
+
+
 }
 
 .div-perfil {
@@ -33,3 +38,15 @@
     margin: auto;
     margin-left: 10px;
 }
+
+.imgfoto{
+    width: 90%;
+    height: 95%;
+    align-items: center;
+    justify-content: center ;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+  
+}
+
