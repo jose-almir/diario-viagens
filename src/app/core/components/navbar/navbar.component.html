@@ -1,14 +1,7 @@
 <mat-toolbar class="nvbar-color" style="height: 100px;">
-    <div *ngIf="logged$ | async; else unlink">
         <a mat-button (click)="onHome()" class="link">
-            <span matTooltip="Ir para a home">Diários</span>
-        </a>
-    </div>
-    <ng-template #unlink>
-        <a routerLink="/home">
             <img src="assets/img/lgo-removebg-preview.png" style="width: 160px; margin-top: 15px;">
         </a>
-    </ng-template>
     <span class="spacer"></span>
     <div *ngIf="logged$ | async as logadoNavbar; else unlogged" class="link-area">
         <a mat-button routerLink="/diarios" matTooltip="Todos">Diários</a>
