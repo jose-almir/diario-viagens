@@ -1,5 +1,5 @@
-<mat-toolbar class="logo">
-  <span>Diários</span>
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/login"><span class="texto-logo">Diário De Viagens</span></a>
   <span class="spacer"></span>
   <div *ngIf="logged$ | async; else unlogged" class="link-area">
     <a mat-button routerLink="/diarios">Diários</a>
