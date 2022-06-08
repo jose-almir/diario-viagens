@@ -17,6 +17,18 @@ export class NavbarComponent implements OnInit {
     this.authService.logout('/login').subscribe();
   }
 
+  muda(){
+    console.log("muda por favor")
+    var toolbar = document.getElementById("toolbar") as HTMLButtonElement
+    var i = toolbar.getAttribute("class")
+
+    if (i == "mat-toolbar mat-primary mat-toolbar-single-row") {
+      toolbar.setAttribute("class", "mat-toolbar mat-accent mat-toolbar-single-row");
+    }else{
+      toolbar.setAttribute("class", "mat-toolbar mat-primary mat-toolbar-single-row");
+    }
+  }
+
   ngOnInit(): void {
     this.logged$ = this.authService.logged;
     this.authService.logged.subscribe
