@@ -1,88 +1,63 @@
-<div class="form-wrapper">
+<div class="body d-flex justify-content-center align-items-center mt-5">
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <h2>Cadastro</h2>
     <p>Seja bem-vindo(a) de volta!</p>
-    <mat-form-field appearance="fill">
-      <mat-label>Nome</mat-label>
-      <input matInput placeholder="Seu nome" formControlName="nome" required />
-      <mat-error *ngIf="signupForm.get('nome')?.errors?.['required']"
-        >Campo obrigatório</mat-error
-      >
-      <mat-icon matPrefix>person</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Seu título</mat-label>
-      <input
-        matInput
-        placeholder="Ex: Apreciador de cuscuz"
-        formControlName="nick"
-        required
-      />
-      <mat-error *ngIf="signupForm.get('nick')?.errors?.['required']"
-        >Campo obrigatório</mat-error
-      >
-      <mat-icon matPrefix>person</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Email</mat-label>
-      <input
-        matInput
-        placeholder="Seu email"
-        formControlName="email"
-        required
-      />
-      <mat-error *ngIf="signupForm.get('email')?.errors?.['required']"
-        >Campo obrigatório</mat-error
-      >
-      <mat-error *ngIf="signupForm.get('email')?.errors?.['email']"
-        >Email inválido</mat-error
-      >
-      <mat-icon matPrefix>email</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Senha</mat-label>
-      <input
-        matInput
-        placeholder="Sua senha"
-        formControlName="senha"
-        type="password"
-        required
-      />
-      <mat-error *ngIf="signupForm.get('senha')?.errors?.['required']"
-        >Campo obrigatório</mat-error
-      >
-      <mat-error *ngIf="signupForm.get('senha')?.errors?.['minlength']"
-        >O mínimo são 8 caracteres
-      </mat-error>
-      <mat-icon matPrefix>key</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Confirmar senha</mat-label>
-      <input
-        matInput
-        placeholder="Confirmar senha"
-        formControlName="confirma_senha"
-        type="password"
-      />
-      <mat-icon matPrefix>key</mat-icon>
-    </mat-form-field>
-    <span
-      class="mat-error"
-      *ngIf="signupForm.errors?.['matchPasswords'] && signupForm.get('confirma_senha')?.touched"
-    >
-      As senhas não correspondem
-    </span>
-    <button mat-raised-button color="primary" [disabled]="signupForm.invalid">
-      Cadastrar
-    </button>
-    <span>ou</span>
-    <button
-      (click)="onLoginGoogle()"
-      type="button"
-      mat-raised-button
-      color="warn"
-    >
-      Entrar com o google
-    </button>
+    <mat-stepper orientation="vertical" linear>
+      <mat-form-field appearance="fill">
+        <mat-step label="Preencha com seu Nome" completed="true">
+          <mat-label>Nome</mat-label>
+          <input class="border " matInput placeholder="Seu nome" formControlName="nome" required />
+          <mat-error *ngIf="signupForm.get('nome')?.errors?.['required']">Campo obrigatório</mat-error>
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-step>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-step label="Preencha com título" completed="true">
+          <mat-label>Seu título</mat-label>
+          <input class="border " matInput placeholder="Ex: Apreciador de cuscuz" formControlName="nick" required />
+          <mat-error *ngIf="signupForm.get('nick')?.errors?.['required']">Campo obrigatório</mat-error>
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-step>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-step label="Preencha com seu Email" completed="true">
+          <mat-label>Email</mat-label>
+          <input class="border " matInput placeholder="Seu email" formControlName="email" required />
+          <mat-error *ngIf="signupForm.get('email')?.errors?.['required']">Campo obrigatório</mat-error>
+          <mat-error *ngIf="signupForm.get('email')?.errors?.['email']">Email inválido</mat-error>
+          <mat-icon matPrefix>email</mat-icon>
+        </mat-step>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-step label="Preencha com sua Senha" completed="true">
+          <mat-label>Senha</mat-label>
+          <input class="border " matInput placeholder="Sua senha" formControlName="senha" type="password" required />
+          <mat-error *ngIf="signupForm.get('senha')?.errors?.['required']">Campo obrigatório</mat-error>
+          <mat-error *ngIf="signupForm.get('senha')?.errors?.['minlength']">O mínimo são 8 caracteres
+          </mat-error>
+          <mat-icon matPrefix>key</mat-icon>
+        </mat-step>
+      </mat-form-field>
+      <mat-step label="Confirme sua Senha" completed="true">
+        <mat-label>Confirmar senha</mat-label>
+        <input class="border " matInput placeholder="Confirmar senha" formControlName="confirma_senha"
+          type="password" />
+        <mat-icon matPrefix>key</mat-icon>
+      </mat-step>
+      <mat-step label="Cadastrar ou Entrar com o Google" completed="true">
+        <span class="mat-error"
+          *ngIf="signupForm.errors?.['matchPasswords'] && signupForm.get('confirma_senha')?.touched">
+          As senhas não correspondem
+        </span>
+        <button mat-raised-button color="primary" [disabled]="signupForm.invalid">
+          Cadastrar
+        </button>
+        <span>ou</span>
+        <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
+          Entrar com o google
+        </button>
+      </mat-step>
+    </mat-stepper>
   </form>
+
 </div>
