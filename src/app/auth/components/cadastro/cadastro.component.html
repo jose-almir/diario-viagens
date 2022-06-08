@@ -75,14 +75,11 @@
     <button mat-raised-button color="primary" [disabled]="signupForm.invalid">
       Cadastrar
     </button>
-    <span>ou</span>
-    <button
-      (click)="onLoginGoogle()"
-      type="button"
-      mat-raised-button
-      color="warn"
-    >
-      Entrar com o google
+    <span class="text-align">ou</span>
+    <button (click)="onLoginGoogle()" type="button" class="btn btn-danger">
+      Entrar com o Google
+    </button> 
+    <p></p>
+    <button (click)="onLoginGithub()" type="button" class="btn btn-dark">
+      Entrar com o Github
     </button>
-  </form>
-</div>
