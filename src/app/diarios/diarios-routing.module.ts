@@ -13,6 +13,7 @@ const routes: Routes = [
     redirectTo: 'diarios',
     pathMatch: 'full',
   },
+  
   {
     path: 'diarios',
     component: DiarioListComponent,

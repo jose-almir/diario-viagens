@@ -15,19 +15,20 @@
                         <p>{{ diario.corpo }}</p>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a [routerLink]="diario.id" mat-icon-button color="primary">
+                        <a [routerLink]="diario.id" mat-icon-button color="primary" matTooltip="Detalhes">
                             <mat-icon>visibility</mat-icon>
                         </a>
                     </mat-card-actions>
                 </mat-card>
             </div>
+
         </mat-tab>
         <mat-tab label="Meus Diarios">
             <div *ngIf="meusDiarios$ | async as diarios; else loading">
                 <div class="container">
                     <div class="div-perfil" style="margin-top: 30px;">
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>{{diarios[0].usuarioName}}</mat-card-title>
+                        <div mat-card-avatar class="example-header-image" matTooltip="Usuario logado"></div>
+                        <!-- <mat-card-title>{{diarios[0].usuarioName}}</mat-card-title> -->
                     </div>
                     <div class="galery" style="margin-top: 30px;">
                         Galeria
@@ -52,7 +53,7 @@
 </ng-template>
 
 <div class="fab-wrapper">
-    <button (click)="onClickAdd()" mat-fab color="primary">
+    <button (click)="onClickAdd()" mat-fab color="primary"matTooltip="Adicionar">
         <mat-icon>add</mat-icon>
     </button>
 </div>
