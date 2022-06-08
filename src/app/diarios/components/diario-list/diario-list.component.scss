@@ -9,3 +9,14 @@
   background-image: url('https://jsl-online.com/wp-content/uploads/2017/01/placeholder-user.png');
   background-size: cover;
 }
+
+.example-card{
+  width: 300px;
+  min-width: 300px;
+}
+.example-card mat-card-header{
+  height: 80px;
+}
+.example-card mat-card-content{
+  height: 100px;
+}

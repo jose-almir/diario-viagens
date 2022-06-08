@@ -1,66 +1,58 @@
 <div>
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Todos">
-      <div *ngIf="allDiarios$ | async as diarios; else loading">
-        <mat-card *ngFor="let diario of diarios" class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{ diario.usuarioName }}</mat-card-title>
-            <mat-card-subtitle>{{ diario.usuarioNick }}</mat-card-subtitle>
-          </mat-card-header>
-          <img
-            mat-card-image
-            [src]="diario.imagem"
-            alt="Photo of a Shiba Inu"
-          />
-          <mat-card-content>
-            <h2>{{ diario.titulo }}</h2>
-            <small>{{ diario.data | date }} | {{ diario.local }}</small>
-            <p>{{ diario.corpo }}</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <a [routerLink]="diario.id" mat-icon-button color="primary">
-              <mat-icon>visibility</mat-icon>
-            </a>
-          </mat-card-actions>
-        </mat-card>
+      <div *ngIf="allDiarios$ | async as diarios; else loading" class="my-5">
+        <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)">
+          <mat-grid-tile *ngFor="let diario of diarios">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{ diario.usuarioName }}</mat-card-title>
+                <mat-card-subtitle>{{ diario.usuarioNick }}</mat-card-subtitle>
+              </mat-card-header>
+              <img width="300" height="150" mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu" />
+              <mat-card-content>
+                <h2>{{ diario.titulo }}</h2>
+                <small>{{ diario.data | date }} | {{ diario.local }}</small>
+                <p>{{ diario.corpo }}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <a [routerLink]="diario.id" mat-icon-button color="primary">
+                  <mat-icon>visibility</mat-icon>
+                </a>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
       </div>
     </mat-tab>
     <mat-tab label="Meus diários">
-      <div *ngIf="meusDiarios$ | async as diarios; else loading">
-        <mat-card *ngFor="let diario of diarios" class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{ diario.usuarioName }}</mat-card-title>
-            <mat-card-subtitle>{{ diario.usuarioNick }}</mat-card-subtitle>
-          </mat-card-header>
-          <img
-            mat-card-image
-            [src]="diario.imagem"
-            alt="Photo of a Shiba Inu"
-          />
-          <mat-card-content>
-            <h2>{{ diario.titulo }}</h2>
-            <small>{{ diario.data | date }} | {{ diario.local }}</small>
-            <p>{{ diario.corpo }}</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button
-              (click)="onClickEdit(diario)"
-              mat-icon-button
-              color="primary"
-            >
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button
-              (click)="onClickDelete(diario)"
-              mat-icon-button
-              color="warn"
-            >
-              <mat-icon>delete</mat-icon>
-            </button>
-          </mat-card-actions>
-        </mat-card>
+      <div *ngIf="meusDiarios$ | async as diarios; else loading" class="my-5">
+        <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)">
+          <mat-grid-tile *ngFor="let diario of diarios">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{ diario.usuarioName }}</mat-card-title>
+                <mat-card-subtitle>{{ diario.usuarioNick }}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu" />
+              <mat-card-content>
+                <h2>{{ diario.titulo }}</h2>
+                <small>{{ diario.data | date }} | {{ diario.local }}</small>
+                <p>{{ diario.corpo }}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button (click)="onClickEdit(diario)" mat-icon-button color="primary">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="onClickDelete(diario)" mat-icon-button color="warn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
       </div>
     </mat-tab>
   </mat-tab-group>

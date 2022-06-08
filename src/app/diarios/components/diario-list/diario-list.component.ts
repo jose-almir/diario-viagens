@@ -17,6 +17,8 @@ export class DiarioListComponent implements OnInit {
   allDiarios$?: Observable<Diario[]>;
   meusDiarios$?: Observable<Diario[]>;
 
+  numeroDeColunas!: number;
+
   constructor(
     private dialog: MatDialog,
     private diariosService: DiariosService,
@@ -92,8 +94,13 @@ export class DiarioListComponent implements OnInit {
     });
   }
 
+  onResize(event: any) {
+    this.numeroDeColunas = (event.target.innerWidth <= 900) ? 1 : 3;
+    }
+
   ngOnInit(): void {
     this.allDiarios$ = this.diariosService.getTodosDiarios();
     this.meusDiarios$ = this.diariosService.getDiariosUsuario();
+    this.numeroDeColunas = (window.innerWidth <= 900) ? 1 : 3;
   }
 }
