@@ -1,14 +1,54 @@
-<mat-grid-list cols="2" rowHeight="2:2">
-  <mat-grid-tile>
-    <img class=" foto" [src]="image2" alt="">
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="texto">
-      <h1>Soul Viagens</h1>
-      <h2>O App perfeito para armazenar suas memórias </h2>
+<div class="banner-image h-100 w-100 d-flex justify-content-center align-items-center">
+    <h2 style="color: white;">O App perfeito para armazenar suas memórias </h2>
+</div>
+<div>
+    <div class="container" style="margin-top: 100px;">
+        <h1 style="font-weight: 800;"> Documente <br> Suas Melhores <span class="color-text">Aventuras</span></h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="single-box">
+                                        <div class="img-area">
+                                            <img class="d-block w-100" [src]="imgCarousel[0]" alt="First slide">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single-box">
+                                        <div class="img-area">
+                                            <img class="d-block w-100" [src]="imgCarousel[1]" alt="First slide">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single-box">
+                                        <div class="img-area">
+                                            <img class="d-block w-100" [src]="imgCarousel[2]" alt="First slide">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-
-  </mat-grid-tile>
-
-</mat-grid-list>
+</div>

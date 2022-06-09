@@ -16,6 +16,7 @@ import { DiariosModule } from './diarios/diarios.module';
 import { NgChartsModule } from 'ng2-charts';
 import { DashboardModule } from './dashboard/dashboard.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
