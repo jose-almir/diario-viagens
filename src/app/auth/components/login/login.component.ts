@@ -59,6 +59,18 @@ export class LoginComponent implements OnInit {
       .subscribe();
   }
 
+  onLoginFacebook() {
+    this.authService
+      .loginFacebook()
+      .pipe(
+        this.toast.observe({
+          success: 'Login efetuado',
+          error: 'Operação cancelada',
+          loading: 'Fazendo login...',
+        })
+      )
+      .subscribe();
+  }
 
   ngOnInit(): void { }
 }
