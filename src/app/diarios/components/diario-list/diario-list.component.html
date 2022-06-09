@@ -25,20 +25,28 @@
         </mat-tab>
         <mat-tab label="Meus Diarios">
             <div *ngIf="meusDiarios$ | async as diarios; else loading">
-                <div class="container">
-                    <div class="div-perfil" style="margin-top: 30px;">
-                        <div mat-card-avatar class="example-header-image" matTooltip="Usuario logado"></div>
-                        <!-- <mat-card-title>{{diarios[0].usuarioName}}</mat-card-title> -->
+                <div class="perfil">
+                    <div mat-card-avatar class="example-header-image" matTooltip="Usuario logado">
                     </div>
-                    <div class="galery" style="margin-top: 30px;">
-                        Galeria
+                    <div class="galery">
+                        <strong>Galeria</strong>
                     </div>
                 </div>
+
                 <mat-grid-list cols="3" rowHeight="500px" *ngIf="qtColumns | async as dimension">
                     <mat-grid-tile *ngFor="let diario of diarios" [colspan]="dimension.cols">
                         <mat-card class="diario-card">
                             <img class="imgfoto" mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu">
-                            <mat-card-title>{{diario.titulo}}</mat-card-title>
+                            <mat-card-title><strong>{{diario.titulo}}</strong></mat-card-title>
+                            <small style="text-align: right;"> {{diario.local}} / {{diario.data | date}}</small>
+
+                            <button class="edit" (click)="onClickEdit(diario)" mat-icon-button color="primary">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+
+                            <button class="delete" (click)="onClickDelete(diario)" mat-icon-button color="warn">
+                                <mat-icon>delete</mat-icon>
+                            </button>
                         </mat-card>
                     </mat-grid-tile>
                 </mat-grid-list>
@@ -53,7 +61,7 @@
 </ng-template>
 
 <div class="fab-wrapper">
-    <button (click)="onClickAdd()" mat-fab color="primary"matTooltip="Adicionar">
+    <button (click)="onClickAdd()" mat-fab color="primary" matTooltip="Adicionar">
         <mat-icon>add</mat-icon>
     </button>
 </div>
