@@ -1,4 +1,25 @@
-.foto{
-  width: 100%;
-margin: 25px 25px 25px 25px;
+.foto {
+    width: 100%;
+    margin: 25px 25px 25px 25px;
+}
+
+.banner-image {
+    background-image: url("/assets/img/pexels-alena-aleshina-5700578 (1).jpg");
+    background-size: cover;
+}
+
+.color-text {
+    color: #B3700E;
+}
+
+.container>h1::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 60px;
+    background-color: #B3700E;
+    display: inline-block;
+    left: 20;
+    top: 1180px;
+    border-radius: 8px;
 }
