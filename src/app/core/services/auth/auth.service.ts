@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, authState } from '@angular/fire/auth';
+import { Auth, authState, FacebookAuthProvider } from '@angular/fire/auth';
 import { doc, docData, Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import {
@@ -116,6 +116,25 @@ export class AuthService {
       })
     );
   }
+
+  loginFacebook() {
+    return from(signInWithPopup(this.auth, new FacebookAuthProvider())).pipe(
+      tap((creds) => {
+        const user = creds.user;
+        const userDoc = doc(this.usuarios, user.uid);
+        setDoc(userDoc, {
+          uid: user.uid,
+          email: user.email,
+          nome: user.displayName,
+          imagem: user.photoURL,
+          nick: 'Um usuário do Facebook',
+        });
+
+        this.router.navigate(['/']);
+      })
+    );
+  }
+
 
   recoverPassword(email: string) {
     return from(sendPasswordResetEmail(this.auth, email));
