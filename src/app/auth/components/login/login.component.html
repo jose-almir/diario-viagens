@@ -1,5 +1,5 @@
 <div class="form-wrapper container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="form">
         <h2>Login</h2>
         <p>Seja bem-vindo(a) de volta!</p>
         <mat-form-field appearance="fill">
@@ -11,9 +11,11 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Senha</mat-label>
-            <mat-icon mat-icon class="viewPassword" (click)="changeView()">visibility</mat-icon>
-            <input *ngIf="!hide ; else: type" matInput placeholder="Sua senha" formControlName="senha" type="password"
-                secureTextEntry="false" />
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
             <ng-template #type>
                 <input matInput placeholder="Sua senha" formControlName="senha" type="text" secureTextEntry="false" />
             </ng-template>
@@ -34,4 +36,6 @@
     </form>
     <a class="termos" routerLink="/termos-de-privacidade">Termos de Privacidade</a>
 </div>
+
+
 
