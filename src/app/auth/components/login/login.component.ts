@@ -14,15 +14,8 @@ export class LoginComponent implements OnInit {
     senha: ['', [Validators.required, Validators.minLength(8)]],
   });
 
-  hide?: boolean = false;
-
-  changeView(){
-    if(this.hide === true){
-      this.hide = false;
-    }else {
-      this.hide = true;
-    }
-  }
+  hide?: boolean = false; 
+  // Ofuscar senha 
 
 
   constructor(

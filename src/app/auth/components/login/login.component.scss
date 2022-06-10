@@ -4,15 +4,21 @@
     align-items: center;
     justify-content: center;
     background-color: #ffff;
-    width: 20%;
-    height: 50%;
+    width: 25%;
+    height: 60%;
     margin: auto;
     margin-top: 6%;
     border-radius: 20px;
+    padding: 10px 50px 20px;
+    border-right: 4mm ridge rgba(211, 220, 50, .6);
+    border-left: 4mm ridge rgba(211, 220, 50, .6);
+    font-family: 'Joan', serif;
+    
 }
 
 button {
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .btnLoginBG {
@@ -20,14 +26,16 @@ button {
 }
 
 
-.viewPassword {
-    cursor: pointer;
-    margin-left: 160px;
-    color: #b257d9;
-}
-
-.container span {
+.elementLine {
   text-align: center;
 }
 
+
+.form {
+    padding-right: 10%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+}
 
