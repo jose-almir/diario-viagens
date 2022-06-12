@@ -16,6 +16,12 @@ export class LoginComponent implements OnInit {
 
   hide?: boolean = false; 
   // Ofuscar senha 
+  changeView(){
+    if(this.hide ===true){
+      this.hide = false;
+    } else {this.hide = true;
+    }
+  }
 
 
   constructor(

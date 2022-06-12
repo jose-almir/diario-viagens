@@ -11,11 +11,9 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Senha</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
+            <mat-icon mat-icon class="viewPassword" (click)="changeView()">visibility</mat-icon>
+            <input *ngIf="!hide ; else: type" matInput placeholder="Sua senha" formControlName="senha" type="password"
+                secureTextEntry="false" />
             <ng-template #type>
                 <input matInput placeholder="Sua senha" formControlName="senha" type="text" secureTextEntry="false" />
             </ng-template>
@@ -36,6 +34,3 @@
     </form>
     <a class="termos" routerLink="/termos-de-privacidade">Termos de Privacidade</a>
 </div>
-
-
-
