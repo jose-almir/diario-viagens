@@ -1,0 +1,11 @@
+.container>h1::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 60px;
+    background-color: #B3700E;
+    display: inline-block;
+    left: 20;
+    top: 1180px;
+    border-radius: 8px;
+}

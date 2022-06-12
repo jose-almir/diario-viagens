@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="container-fluid">
-        <a mat-button (click)="onHome()" class="link">
+        <a mat-button routerLink="/home" class="link">
             <img src="assets/img/lgo-removebg-preview.png" style="width: 160px; margin: -30px;">
         </a>
         <div *ngIf="logged$ | async as logadoNavbar; else unlogged" class="link-area">

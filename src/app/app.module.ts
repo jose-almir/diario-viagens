@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -13,9 +12,9 @@ import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { DiariosModule } from './diarios/diarios.module';
-import { NgChartsModule } from 'ng2-charts';
 import { DashboardModule } from './dashboard/dashboard.module';
 
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,10 +29,12 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CoreModule,
     AuthModule,
     DiariosModule,
+    HomeModule,
     HotToastModule.forRoot({
       position: 'bottom-center',
     }),
     DashboardModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
