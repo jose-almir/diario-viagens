@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material.module';
 import { TermosDePrivacidadeComponent } from './components/termos-de-privacidade/termos-de-privacidade.component';
 import { HomeComponent } from './components/home/home.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,10 @@ import { HomeComponent } from './components/home/home.component';
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
+    NgxCaptchaModule,
   ],
 })
-export class AuthModule {}
+export class AuthModule { }
 
 /**
  * Agrupar as funcionalidades de autenticação:
