@@ -14,21 +14,22 @@ export class LoginComponent implements OnInit {
     senha: ['', [Validators.required, Validators.minLength(8)]],
   });
 
-  hide?: boolean = false; 
+  hide?: boolean = false;
   // Ofuscar senha 
-  changeView(){
-    if(this.hide ===true){
+  changeView() {
+    if (this.hide === true) {
       this.hide = false;
-    } else {this.hide = true;
+    } else {
+      this.hide = true;
     }
   }
 
-
+  siteKey: string;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private toast: HotToastService
-  ) { }
+  ) { this.siteKey = '6Lf5nmQgAAAAAGBE82rwfwIllPqz90bkIuXEjzei'; }
 
   onSubmit() {
     const { email, senha } = this.loginForm.value;
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
       .subscribe();
   }
 
-  
+
   onLoginGoogle() {
     this.authService
       .loginGoogle()

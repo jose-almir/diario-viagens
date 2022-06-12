@@ -35,15 +35,21 @@
             <mat-icon matPrefix>key</mat-icon>
         </mat-form-field>
         <span class="mat-error" *ngIf="signupForm.errors?.['matchPasswords'] && signupForm.get('confirma_senha')?.touched">
-      As senhas não correspondem
-    </span>
+            As senhas não correspondem
+        </span>
+
+        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" style="margin-bottom: 15px;">
+        </ngx-recaptcha2>
+
+
         <button class="btnLoginBG" mat-raised-button color="primary" [disabled]="signupForm.invalid">
-      Cadastrar
-    </button>
+            Cadastrar
+        </button>
         <span>ou</span>
         <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
-      Entrar com o google
-    </button>
+            Entrar com o google
+        </button>
     </form>
+
     <a class="termos" routerLink="/termos-de-privacidade">Termos de Privacidade</a>
 </div>

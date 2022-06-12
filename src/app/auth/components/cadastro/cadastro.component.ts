@@ -31,11 +31,12 @@ export class CadastroComponent implements OnInit {
       : null;
   }
 
+  siteKey: string;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private toast: HotToastService
-  ) {}
+  ) { this.siteKey = '6Lf5nmQgAAAAAGBE82rwfwIllPqz90bkIuXEjzei'; }
 
   onSubmit() {
     const { email, senha, nick, nome } = this.signupForm.value;
@@ -64,5 +65,5 @@ export class CadastroComponent implements OnInit {
       .subscribe();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
