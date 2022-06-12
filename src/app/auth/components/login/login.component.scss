@@ -6,12 +6,12 @@
     background-color: #ffff;
     width: 25%;
     height: 60%;
-    margin: auto;
+    margin:auto;
     margin-top: 6%;
     border-radius: 20px;
     padding: 10px 50px 20px;
-    border-right: 4mm ridge rgba(211, 220, 50, .6);
-    border-left: 4mm ridge rgba(211, 220, 50, .6);
+    // border-right: 4mm ridge rgba(211, 220, 50, .6);
+    // border-left: 4mm ridge rgba(211, 220, 50, .6);
     font-family: 'Joan', serif;
     
 }
@@ -40,5 +40,9 @@ button {
     
 }
 
-
-
+.viewPassword  {
+    margin-left: 160px;
+    text-decoration: none;
+    cursor: pointer;
+    
+    }
