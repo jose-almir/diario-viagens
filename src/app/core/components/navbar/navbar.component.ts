@@ -17,7 +17,6 @@ export class NavbarComponent implements OnInit {
     ) {}
 
   logged$?: Observable<any>;
-
   corDaNav: string = "#d7d228"
 
   mudarCor() {
@@ -27,13 +26,8 @@ export class NavbarComponent implements OnInit {
     } else {
       this.corDaNav = "#d7d228"
     }
-  }
-
-
-  onHome(){
-    this.router.navigate(['/home']);
-}
-
+  } 
+  
   logout() {
     this.authService.logout('/login')
     .pipe(
