@@ -1,4 +1,4 @@
-<div class="form-wrapper container">
+<div class="form-wrapper container" style="margin-top: 200px;">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="form">
         <h2>Login</h2>
         <p>Seja bem-vindo(a) de volta!</p>
@@ -31,9 +31,10 @@
         <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
             Entrar com o google
         </button>
-        <button (click)="onLoginFacebook()" type="button" mat-raised-button color="warn">
+        <button (click)="onLoginFacebook()" type="button" mat-raised-button color="warn" style="margin-bottom: 200px;">
             Entrar com o Facebook
         </button>
+
     </form>
-    <a class="termos" routerLink="/termos-de-privacidade">Termos de Privacidade</a>
+
 </div>
